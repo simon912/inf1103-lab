@@ -5,6 +5,18 @@ while True:
     if stock == "quit":
         print("Exiting...")
         break
+    if not stock.isdigit():
+        print("Invalid input. Please enter a valid number.")
+        continue
+
     stock = int(stock)
-    print("Stock Quantity:", stock)
+
+    if stock < 0:
+        print("Stock quantity cannot be negative, please enter a valid number.")
+        continue
+
+    inventory += stock
+
+    print("Stock Quantity Added:", stock)
+    print("Current Inventory:", inventory)
     
