@@ -1,0 +1,29 @@
+commit 6322b5fdb4fda2339ae6d018f3f64bd98e85f351
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Sep 10 20:35:09 2026 +0800
+
+    Implement Dockerfile
+
+commit 80fea57b13f76798a31d14422c03433983675732
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Sep 10 20:11:07 2026 +0800
+
+    Implement alert for inventory exceeding 500 and final result after quitting
+
+commit 24ad7661ecfebdf12f975bfd933624fc8e249ee2
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Sep 10 20:04:49 2026 +0800
+
+    Implemented data validation for string input for stock & negative number + implement inventory tracking
+
+commit 3e945c5c7c1ef0c50f00a89b1603b18624416b38
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Sep 10 19:59:42 2026 +0800
+
+    Implement user input
+
+commit f8fc8698680840f0232928d55095434e1ac2c0c4
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Sep 10 19:51:15 2026 +0800
+
+    First commit
