@@ -9,10 +9,12 @@ while True:
             break
     
     stock = input("Enter stock quantity (type 'quit' to exit): ")
+    
     if stock == "quit":
         print("Total Units Processed: ", inventory)
         print("Number of Rejected Entries:", fail_entry)
         break
+
     if not stock.isdigit():
         print("Invalid input. Please enter a valid number.")
         fail_entry += 1
