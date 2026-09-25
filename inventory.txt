@@ -1,0 +1,7 @@
+1001,Laptop,1
+1002,Samsung,2
+1003,MacBook,10
+1004,iPhone,5
+1005,Breadboard,100
+1006,Resistors,150
+1007,Capacitor,20
