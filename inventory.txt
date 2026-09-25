@@ -5,3 +5,7 @@
 1005,Breadboard,100
 1006,Resistors,150
 1007,Capacitor,20
+1008,Apple,1000
+1009,Banana,100
+1010,Test,123
+1011,Mango,10

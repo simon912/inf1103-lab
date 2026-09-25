@@ -22,24 +22,12 @@ def load_inventory():
                 print(f"{item[0]}, {item[1]}, {item[2]}")
         return inventory_array
 
-
-
-#def process_delivery(current_total, new_value):
- #       current_total += new_value
- #       print("New Order Added:")
- #       print("Stock Quantity Added:", new_value)
- #       print("Current Inventory:", current_total)
- #       return current_total
-
-#def calculate_tax(amount):
-#        tax_rate = 10/100
-#        amount = amount + (amount * tax_rate)
-#        return amount
-
-#def generate_report(total_units, failed_attempts):
-#        print("Current Order:")
-#        load_inventory()
-
+def save_inventory(inventory_array):
+        with open("inventory.txt", "w") as file:
+                for item in inventory_array:
+                        file.write(f"{item[0]},{item[1]},{item[2]}\n")
+        print("Order successfully added to inventory.txt")
+                        
 def get_valid_input():
          print("Current Orders: ")
          current_inventory = load_inventory()
@@ -50,9 +38,11 @@ def get_valid_input():
          while True:
              product_name = input("Enter Product Name (type 'quit' to exit): ")
              if product_name == "quit":
+                        save_inventory(current_inventory)
                         break
              stock = input("Enter Quantity (type 'quit' to exit): ")
              if stock == "quit":
+                        save_inventory(current_inventory)
                         break
              if not stock.isdigit():
                                   print("Invalid input. Please enter a valid number.")
@@ -64,12 +54,10 @@ def get_valid_input():
              new_id = get_next_id(current_inventory)
              new_item = [int(new_id), product_name, str(stock)]
              current_inventory.append(new_item)
+             save_inventory(current_inventory)
              print("New Order Added: ")
              
              print(f"{new_id}, {product_name}, {stock}")
-        
-             #inventory = process_delivery(inventory, stock)
-
 
 # call function
 get_valid_input()
