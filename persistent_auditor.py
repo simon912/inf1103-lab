@@ -1,5 +1,3 @@
-from hashlib import new
-
 def get_next_id(inventory_array):
     highest_id = 1000
     for item in inventory_array:
