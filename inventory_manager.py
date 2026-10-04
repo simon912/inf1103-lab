@@ -21,6 +21,9 @@ def menu():
         elif option == "2":
             print("")
             add_product()
+        elif option == "3":
+            print("")
+            update_stock()
         elif option == "6":
             print("Saving inventory before exit...")
             #insert save inventory function
@@ -50,7 +53,6 @@ def display_all():
         print(f"ID: {i['ID']} | Name: {i['Name']} | Price: ${i['Price']} | Stock: {i['Stock']}")
     print("---------------------------------------------------------\n")
 
-    
 def add_product():
     print("Add New Product")
     product_id = input("Product ID: ")
@@ -70,4 +72,22 @@ def add_product():
     print("")
     print("Product added successfully!")
     
+def update_stock():
+    print("Update Stock")
+    product_id = input("Enter Product ID: ")
+    inventory_array = load_inventory(False)
+    for product in inventory_array:
+        if product["ID"] == product_id:
+            print("Product Found:")
+            print(f"Name: {product['Name']}")
+            print(f"Current Stock: {product['Stock']}")
+            new_stock = int(input("New Stock Quantity: "))
+            product["Stock"] = new_stock
+            with open("inventory.json", "w") as file:
+                json.dump({"Product": inventory_array}, file, indent=4)
+            print("Stock updated successfully!")
+            return
+
+    print("Product Not Found.") 
+
 menu()
