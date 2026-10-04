@@ -23,6 +23,12 @@
             "Name": "Monitor",
             "Price": 299.99,
             "Stock": 10
+        },
+        {
+            "ID": "P005",
+            "Name": "iPhone",
+            "Price": 1000.0,
+            "Stock": 25
         }
     ]
 }
