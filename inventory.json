@@ -35,6 +35,12 @@
             "Name": "Samsung Galaxy",
             "Price": 1000.0,
             "Stock": 20
+        },
+        {
+            "ID": "P007",
+            "Name": "64GB Flash Drive",
+            "Price": 100.0,
+            "Stock": 15
         }
     ]
 }
