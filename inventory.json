@@ -4,7 +4,7 @@
             "ID": "P001",
             "Name": "Laptop",
             "Price": 1200.0,
-            "Stock": 15
+            "Stock": 20
         },
         {
             "ID": "P002",
@@ -29,6 +29,12 @@
             "Name": "iPhone",
             "Price": 1000.0,
             "Stock": 25
+        },
+        {
+            "ID": "P006",
+            "Name": "Samsung Galaxy",
+            "Price": 1000.0,
+            "Stock": 20
         }
     ]
 }

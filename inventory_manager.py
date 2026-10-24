@@ -1,5 +1,35 @@
 import json
 
+class Product:
+    def __init__(self, product_id: str, name: str, price: float, stock: int):
+        self.__product_id = product_id
+        self.__name = name
+        self.__price = price
+        self.__stock = stock
+
+    def update_stock(self, quantity: int) -> None:
+        self.__stock = quantity
+
+    def display_information(self) -> None:
+        print(f"ID: {self.__product_id} | Name: {self.__name} | Price: ${self.__price} | Stock: {self.__stock}")
+        
+    def get_product_id(self) -> str:
+        return self.__product_id
+    
+    def get_name(self) -> str:
+        return self.__name
+
+    def get_price(self) -> float:
+        return self.__price
+    
+    def to_dict(self) -> dict:
+        return {
+        "ID": self.__product_id,
+        "Name": self.__name,
+        "Price": self.__price,
+        "Stock": self.__stock
+    }
+
 def menu():
     print("========================================================")
     print("INVENTORY MANAGEMENT SYSTEM")
@@ -44,35 +74,40 @@ def menu():
 def load_inventory(show_message=False):
     try:
         with open("inventory.json", "r") as file:
-            inventory_array = json.load(file)["Product"]
+            data = json.load(file)["Product"]
+        inventory_array = []    
+        
+        for item in data:
+            product = Product(
+                item["ID"], item["Name"], item["Price"], item["Stock"])
+            inventory_array.append(product)
+        
         if show_message:
             print("inventory.json found.")
             print("Inventory loaded successfully.")
+        
         return inventory_array
+
     except FileNotFoundError:
         print("inventory.json not found.")
         return None
-    return inventory_array
     
 def display_all(inventory_array):
     print("Current Inventory")
     print("---------------------------------------------------------")
-    for i in inventory_array:
-        print(f"ID: {i['ID']} | Name: {i['Name']} | Price: ${i['Price']} | Stock: {i['Stock']}")
+    for product in inventory_array:
+        product.display_information()
     print("---------------------------------------------------------\n")
 
 def add_product(inventory_array):
     print("Add New Product")
+    
     product_id = input("Product ID: ")
     product_name = input("Product Name: ")
     price = float(input("Price: "))
     stock = int(input("Stock Quantity: "))
-    new_product = {
-        "ID": product_id,
-        "Name": product_name,
-        "Price": price,
-        "Stock": stock
-    }
+    
+    new_product = Product(product_id, product_name, price, stock)
     inventory_array.append(new_product)
     print("")
     print("Product added successfully!")
@@ -80,34 +115,39 @@ def add_product(inventory_array):
 def update_stock(inventory_array):
     print("Update Stock")
     product_id = input("Enter Product ID: ")
+    
     for product in inventory_array:
-        if product["ID"] == product_id:
-            print("Product Found:")
-            print(f"Name: {product['Name']}")
-            print(f"Current Stock: {product['Stock']}")
+        if product.get_product_id() == product_id:
+            product.display_information()
+
             new_stock = int(input("New Stock Quantity: "))
-            product["Stock"] = new_stock
+            product.update_stock(new_stock)
+
             print("Stock updated successfully!")
             return
+
     print("Product Not Found.") 
 
 def search_product(inventory_array):
     print("Search Product")
     product_id = input("Enter Product ID: ")
+    
     for product in inventory_array:
-        if product["ID"] == product_id:
+        if product.get_product_id() == product_id:
             print("Product Found:")
             print("---------------------------------------------------------")
-            print(f"Name: {product['Name']}")
-            print(f"Price: ${product['Price']}")
-            print(f"Stock: {product['Stock']}")
+            product.display_information()
             print("---------------------------------------------------------")
             return
+
     print("Product Not Found.")
     
 def save_inventory(inventory_array):
-    with open("inventory.json", "w") as file: 
-        json.dump( {"Product": inventory_array}, file, indent=4 ) 
-        print("Inventory saved successfully to inventory.json.")
+    data = {
+        "Product": [product.to_dict() for product in inventory_array]
+    }
 
+    with open("inventory.json", "w") as file:
+        json.dump(data, file, indent=4)
+        
 menu()
