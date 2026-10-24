@@ -41,6 +41,12 @@
             "Name": "64GB Flash Drive",
             "Price": 100.0,
             "Stock": 15
+        },
+        {
+            "ID": "P008",
+            "Name": "Lenovo Laptop Charger",
+            "Price": 50.0,
+            "Stock": 10
         }
     ]
 }
