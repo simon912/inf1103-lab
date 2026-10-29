@@ -5,20 +5,23 @@
             "Name": "Laptop",
             "Price": 1200.0,
             "Stock": 20,
+            "Type": "Physical",
             "Weight": 2.5
         },
         {
             "ID": "P002",
-            "Name": "Mouse",
-            "Price": 25.5,
+            "Name": "Nintendo Switch Super Mario",
+            "Price": 66.5,
             "Stock": 60,
-            "Weight": 0.1
+            "Type": "Digital",
+            "Download_Size": 1000
         },
         {
             "ID": "P003",
             "Name": "Keyboard",
             "Price": 45.0,
             "Stock": 20,
+            "Type": "Physical",
             "Weight": 0.2
         },
         {
@@ -26,6 +29,7 @@
             "Name": "Monitor",
             "Price": 299.99,
             "Stock": 10,
+            "Type": "Physical",
             "Weight": 2
         },
         {
@@ -33,6 +37,7 @@
             "Name": "iPhone",
             "Price": 1000.0,
             "Stock": 25,
+            "Type": "Physical",
             "Weight": 0.2
         },
         {
@@ -40,6 +45,7 @@
             "Name": "Adobe Subscription",
             "Price": 100.0,
             "Stock": 20,
+            "Type": "Digital",
             "Download_Size": 500
         },
         {
@@ -47,6 +53,7 @@
             "Name": "Microsoft Office 365",
             "Price": 100.0,
             "Stock": 20,
+            "Type": "Digital",
             "Download_Size": 300
         },
         {
@@ -54,20 +61,16 @@
             "Name": "Windows 7 OS",
             "Price": 25.0,
             "Stock": 15,
+            "Type": "Digital",
             "Download_Size": 1500
         },
         {
-            "ID": "P008",
-            "Name": "Windows 7 OS",
-            "Price": 25.0,
-            "Stock": 15,
-            "Download_Size": 1500
-        },
-        {
-            "ID": "P010",
-            "Name": "Nintendo Switch Super Mario",
-            "Price": 50.0,
-            "Stock": 20
+            "ID": "P009",
+            "Name": "Lenovo Mouse",
+            "Price": 10.0,
+            "Stock": 40,
+            "Type": "Physical",
+            "Weight": 0.1
         }
     ]
 }

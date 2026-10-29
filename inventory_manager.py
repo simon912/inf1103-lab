@@ -1,6 +1,12 @@
 import json
+from abc import ABC, abstractmethod
 
-class Product:
+class CanBeShipped(ABC):
+    @abstractmethod
+    def calculate_shipping_cost(self) -> float:
+        pass
+
+class Product(ABC):
     def __init__(self, product_id: str, name: str, price: float, stock: int):
         self.__product_id = product_id
         self.__name = name
@@ -29,6 +35,9 @@ class Product:
         "Price": self.__price,
         "Stock": self.__stock
     }
+    @abstractmethod
+    def get_fulfilment_info(self) -> str:
+        pass
 
 class PhysicalProduct(Product):
     def __init__(self, product_id: str, name: str, price: float, stock: int, weight: float):
@@ -41,8 +50,17 @@ class PhysicalProduct(Product):
         
     def to_dict(self) -> dict: 
         data = super().to_dict()
+        data["Type"] = "Physical"
         data["Weight"] = self.__weight
         return data
+
+    def get_fulfilment_info(self) -> str:
+            return "This product requires physical shipping."
+        
+    def calculate_shipping_cost(self) -> float:
+        return self.__weight * 5.0 # $5 per kg
+
+CanBeShipped.register(PhysicalProduct)
     
 class DigitalProduct(Product):
     def __init__(self, product_id: str, name: str, price: float, stock: int, size: float):
@@ -55,8 +73,12 @@ class DigitalProduct(Product):
         
     def to_dict(self) -> dict: 
         data = super().to_dict()
+        data["Type"] = "Digital"
         data["Download_Size"] = self.__size
         return data
+    
+    def get_fulfilment_info(self) -> str:
+            return "This product is delivered digitally"
         
         
 class Inventory:
@@ -132,7 +154,6 @@ def menu():
             else:
                 print("Invalid product type. Product not added.")
                 continue
-            product = Product(product_id, product_name, price, stock)
             inventory.add_product(product, show_message=True)
         elif option == "3":
             print("")
