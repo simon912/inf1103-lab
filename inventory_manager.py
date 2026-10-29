@@ -30,13 +30,28 @@ class Product:
         "Stock": self.__stock
     }
 
+class PhysicalProduct(Product):
+    def __init__(self, product_id: str, name: str, price: float, stock: int, weight: float):
+        super().__init__(product_id, name, price, stock)
+        self.__weight = weight
+
+    def display_information(self) -> None:
+        super().display_information()
+        print(f"Weight: {self.__weight} kg")
+        
+    def to_dict(self) -> dict: 
+        data = super().to_dict()
+        data["Weight"] = self.__weight
+        return data
+        
 class Inventory:
     def __init__(self):
         self.__products = []
 
-    def add_product(self, product: Product) -> None:
+    def add_product(self, product: Product, show_message=True) -> None:
         self.__products.append(product)
-        print("Product added successfully!")
+        if show_message:
+            print("Product added successfully!")
 
     def search_product(self, product_id: str):
         for product in self.__products:
@@ -86,14 +101,18 @@ def menu():
         elif option == "2":
             print("")
             print("Add New Product")
-
+            print("1. Physical Product")
+            print("2. Digital Product")
+            product_type = input("Enter product type (1 or 2): ")
             product_id = input("Product ID: ")
             product_name = input("Product Name: ")
             price = float(input("Price: "))
             stock = int(input("Stock Quantity: "))
-
+            if product_type == "1":
+                weight = float(input("Weight (kg): "))
+                product = PhysicalProduct(product_id, product_name, price, stock, weight)
             product = Product(product_id, product_name, price, stock)
-            inventory.add_product(product)
+            inventory.add_product(product, show_message=True)
         elif option == "3":
             print("")
             product_id = input("Enter Product ID: ")
@@ -134,9 +153,13 @@ def load_inventory(show_message=False):
             data = json.load(file)["Product"]   
         
         for item in data:
-            product = Product(
-                item["ID"], item["Name"], item["Price"], item["Stock"])
-            inventory.add_product(product)
+            if "Weight" in item:
+                product = PhysicalProduct(
+                    item["ID"], item["Name"], item["Price"], item["Stock"], item["Weight"])
+            else:
+                product = Product(
+                    item["ID"], item["Name"], item["Price"], item["Stock"])
+            inventory.add_product(product, show_message=False)
         
         if show_message:
             print("inventory.json found.")
@@ -144,59 +167,9 @@ def load_inventory(show_message=False):
 
     except FileNotFoundError:
         print("inventory.json not found.")
-        
     return inventory
     
-def display_all(inventory):
-    print("Current Inventory")
-    print("---------------------------------------------------------")
-    for product in inventory:
-        product.display_information()
-    print("---------------------------------------------------------\n")
 
-def add_product(inventory):
-    print("Add New Product")
-    
-    product_id = input("Product ID: ")
-    product_name = input("Product Name: ")
-    price = float(input("Price: "))
-    stock = int(input("Stock Quantity: "))
-    
-    new_product = Product(product_id, product_name, price, stock)
-    inventory.append(new_product)
-    print("")
-    print("Product added successfully!")
-    
-def update_stock(inventory):
-    print("Update Stock")
-    product_id = input("Enter Product ID: ")
-    
-    for product in inventory:
-        if product.get_product_id() == product_id:
-            product.display_information()
-
-            new_stock = int(input("New Stock Quantity: "))
-            product.update_stock(new_stock)
-
-            print("Stock updated successfully!")
-            return
-
-    print("Product Not Found.") 
-
-def search_product(inventory):
-    print("Search Product")
-    product_id = input("Enter Product ID: ")
-    
-    for product in inventory:
-        if product.get_product_id() == product_id:
-            print("Product Found:")
-            print("---------------------------------------------------------")
-            product.display_information()
-            print("---------------------------------------------------------")
-            return
-
-    print("Product Not Found.")
-    
 def save_inventory(inventory):
     data = {
         "Product": [
