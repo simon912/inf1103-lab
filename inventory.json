@@ -39,19 +39,35 @@
             "ID": "P006",
             "Name": "Adobe Subscription",
             "Price": 100.0,
-            "Stock": 20
+            "Stock": 20,
+            "Download_Size": 500
         },
         {
             "ID": "P007",
             "Name": "Microsoft Office 365",
             "Price": 100.0,
-            "Stock": 20
+            "Stock": 20,
+            "Download_Size": 300
         },
         {
             "ID": "P008",
             "Name": "Windows 7 OS",
             "Price": 25.0,
-            "Stock": 15
+            "Stock": 15,
+            "Download_Size": 1500
+        },
+        {
+            "ID": "P008",
+            "Name": "Windows 7 OS",
+            "Price": 25.0,
+            "Stock": 15,
+            "Download_Size": 1500
+        },
+        {
+            "ID": "P010",
+            "Name": "Nintendo Switch Super Mario",
+            "Price": 50.0,
+            "Stock": 20
         }
     ]
 }

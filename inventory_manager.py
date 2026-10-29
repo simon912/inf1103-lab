@@ -43,6 +43,21 @@ class PhysicalProduct(Product):
         data = super().to_dict()
         data["Weight"] = self.__weight
         return data
+    
+class DigitalProduct(Product):
+    def __init__(self, product_id: str, name: str, price: float, stock: int, size: float):
+        super().__init__(product_id, name, price, stock)
+        self.__size = size
+
+    def display_information(self) -> None:
+        super().display_information()
+        print(f"Download Size: {self.__size} MB")
+        
+    def to_dict(self) -> dict: 
+        data = super().to_dict()
+        data["Download_Size"] = self.__size
+        return data
+        
         
 class Inventory:
     def __init__(self):
@@ -111,6 +126,12 @@ def menu():
             if product_type == "1":
                 weight = float(input("Weight (kg): "))
                 product = PhysicalProduct(product_id, product_name, price, stock, weight)
+            elif product_type == "2":
+                download_size = float(input("Download Size (MB): "))
+                product = DigitalProduct(product_id, product_name, price, stock, download_size)
+            else:
+                print("Invalid product type. Product not added.")
+                continue
             product = Product(product_id, product_name, price, stock)
             inventory.add_product(product, show_message=True)
         elif option == "3":
@@ -156,9 +177,9 @@ def load_inventory(show_message=False):
             if "Weight" in item:
                 product = PhysicalProduct(
                     item["ID"], item["Name"], item["Price"], item["Stock"], item["Weight"])
-            else:
-                product = Product(
-                    item["ID"], item["Name"], item["Price"], item["Stock"])
+            elif "Download_Size" in item:
+                product = DigitalProduct(
+                    item["ID"], item["Name"], item["Price"], item["Stock"], item["Download_Size"])
             inventory.add_product(product, show_message=False)
         
         if show_message:
