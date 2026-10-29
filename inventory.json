@@ -71,6 +71,38 @@
             "Stock": 40,
             "Type": "Physical",
             "Weight": 0.1
+        },
+        {
+            "ID": "P010",
+            "Name": "Logitech Mouse",
+            "Price": 25.0,
+            "Stock": 20,
+            "Type": "Physical",
+            "Weight": 0.1
+        },
+        {
+            "ID": "P011",
+            "Name": "Nintendo Switch Pokemon Scarlet",
+            "Price": 70.0,
+            "Stock": 20,
+            "Type": "Digital",
+            "Download_Size": 2000.0
+        },
+        {
+            "ID": "P012",
+            "Name": "Amazon Prime",
+            "Price": 10.0,
+            "Stock": 20,
+            "Type": "Subscription",
+            "Duration": 3
+        },
+        {
+            "ID": "P013",
+            "Name": "Nintendo Member",
+            "Price": 10.0,
+            "Stock": 20,
+            "Type": "Subscription",
+            "Duration": 2
         }
     ]
 }
