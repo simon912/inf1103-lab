@@ -2,9 +2,9 @@ from product import Product
 from supplier import Supplier
 
 class DigitalProduct(Product):
-    def __init__(self, product_id: str, name: str, price: float, stock: int, size: float, supplier: Supplier):
+    def __init__(self, product_id: str, name: str, price: float, stock: int, size: float, supplier: Supplier) -> None:
         super().__init__(product_id, name, price, stock, supplier)
-        self.__size = size
+        self.__size: float = size
 
     def display_information(self) -> None:
         super().display_information()
@@ -17,7 +17,7 @@ class DigitalProduct(Product):
         return data
 
     @classmethod
-    def from_dict(cls, data: dict):
+    def from_dict(cls, data: dict) -> DigitalProduct:
         return cls(
             data["ID"],
             data["Name"],

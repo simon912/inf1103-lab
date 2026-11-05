@@ -12,10 +12,10 @@ PRODUCT_TYPES = {
 
 
 class Inventory:
-    def __init__(self):
+    def __init__(self) -> None:
         self.__products: list[Product] = []
 
-    def add_product(self, product: Product, show_message=True) -> None:
+    def add_product(self, product: Product, show_message: bool = True) -> None:
         self.__products.append(product)
 
         if show_message:
@@ -58,7 +58,7 @@ class Inventory:
         return self.__products
 
 
-def load_inventory(show_message=False):
+def load_inventory(show_message: bool = False) -> Inventory:
     inventory = Inventory()
 
     try:
@@ -81,7 +81,7 @@ def load_inventory(show_message=False):
     return inventory
 
 
-def save_inventory(inventory):
+def save_inventory(inventory: Inventory) -> None:
     data = {
         "Product": [
             product.to_dict()

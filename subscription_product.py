@@ -1,10 +1,10 @@
 from product import Product
-
+from supplier import Supplier
 
 class SubscriptionProduct(Product):
-    def __init__(self, product_id: str, name: str, price: float, stock: int, duration_months: int):
-        super().__init__(product_id, name, price, stock)
-        self.__duration_months = duration_months
+    def __init__(self, product_id: str, name: str, price: float, stock: int, duration_months: int, supplier: Supplier) -> None:
+        super().__init__(product_id, name, price, stock, supplier)
+        self.__duration_months: int = duration_months
 
     def display_information(self) -> None:
         super().display_information()
@@ -17,13 +17,14 @@ class SubscriptionProduct(Product):
         return data
 
     @classmethod
-    def from_dict(cls, data: dict):
+    def from_dict(cls, data: dict) -> SubscriptionProduct:
         return cls(
             data["ID"],
             data["Name"],
             data["Price"],
             data["Stock"],
-            data["Duration"]
+            data["Duration"],
+            Supplier.from_dict(data["Supplier"])
         )
 
     def get_fulfilment_info(self) -> str:
