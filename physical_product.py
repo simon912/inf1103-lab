@@ -1,11 +1,11 @@
 from product import Product, CanBeShipped
-
+from supplier import Supplier
 
 class PhysicalProduct(Product, CanBeShipped):
-    def __init__(self, product_id: str, name: str, price: float, stock: int, weight: float):
-        super().__init__(product_id, name, price, stock)
+    def __init__(self, product_id: str, name: str, price: float, stock: int, weight: float, supplier: Supplier):
+        super().__init__(product_id, name, price, stock, supplier)
         self.__weight = weight
-
+    
     def display_information(self) -> None:
         super().display_information()
         print(f"Weight: {self.__weight} kg")
@@ -23,7 +23,8 @@ class PhysicalProduct(Product, CanBeShipped):
             data["Name"],
             data["Price"],
             data["Stock"],
-            data["Weight"]
+            data["Weight"],
+            Supplier.from_dict(data["Supplier"])
         )
 
     def get_fulfilment_info(self) -> str:

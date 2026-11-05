@@ -1,9 +1,9 @@
 from product import Product
-
+from supplier import Supplier
 
 class DigitalProduct(Product):
-    def __init__(self, product_id: str, name: str, price: float, stock: int, size: float):
-        super().__init__(product_id, name, price, stock)
+    def __init__(self, product_id: str, name: str, price: float, stock: int, size: float, supplier: Supplier):
+        super().__init__(product_id, name, price, stock, supplier)
         self.__size = size
 
     def display_information(self) -> None:
@@ -23,7 +23,8 @@ class DigitalProduct(Product):
             data["Name"],
             data["Price"],
             data["Stock"],
-            data["Download_Size"]
+            data["Download_Size"],
+            Supplier.from_dict(data["Supplier"])
         )
 
     def get_fulfilment_info(self) -> str:

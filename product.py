@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from supplier import Supplier
 
 class CanBeShipped(ABC):
     @abstractmethod
@@ -7,11 +8,12 @@ class CanBeShipped(ABC):
 
 
 class Product(ABC):
-    def __init__(self, product_id: str, name: str, price: float, stock: int):
+    def __init__(self, product_id: str, name: str, price: float, stock: int, supplier: Supplier):
         self.__product_id = product_id
         self.__name = name
         self.__price = price
         self.__stock = stock
+        self.__supplier = supplier  
 
     def update_stock(self, quantity: int) -> None:
         self.__stock = quantity
@@ -27,13 +29,20 @@ class Product(ABC):
 
     def get_price(self) -> float:
         return self.__price
+    
+    def get_supplier_info(self) -> Supplier:
+        return self.__supplier
+    
+    def display_supplier_information(self) -> None:
+        self.__supplier.display_information()
 
     def to_dict(self) -> dict:
         return {
             "ID": self.__product_id,
             "Name": self.__name,
             "Price": self.__price,
-            "Stock": self.__stock
+            "Stock": self.__stock,
+            "Supplier": self.__supplier.to_dict()
         }
 
     @abstractmethod

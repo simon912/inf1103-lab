@@ -4,7 +4,6 @@ from physical_product import PhysicalProduct
 from digital_product import DigitalProduct
 from subscription_product import SubscriptionProduct
 
-
 PRODUCT_TYPES = {
     "Physical": PhysicalProduct,
     "Digital": DigitalProduct,
@@ -34,6 +33,7 @@ class Inventory:
 
         for product in self.__products:
             product.display_information()
+            product.display_supplier_information()
 
         print("---------------------------------------------------------\n")
 

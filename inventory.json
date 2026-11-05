@@ -6,7 +6,12 @@
             "Price": 1200.0,
             "Stock": 20,
             "Type": "Physical",
-            "Weight": 2.5
+            "Weight": 2.5,
+            "Supplier": {
+                "Supplier_ID": "S001",
+                "Name": "Tech Supplies Inc.",
+                "Contact_Email": "tech67@gmail.com"
+            }
         },
         {
             "ID": "P002",
@@ -14,7 +19,12 @@
             "Price": 66.5,
             "Stock": 60,
             "Type": "Digital",
-            "Download_Size": 1000
+            "Download_Size": 1000,
+            "Supplier": {
+                "Supplier_ID": "S002",
+                "Name": "Game World Ltd.",
+                "Contact_Email": "gameworld@hotmail.com"
+            }
         },
         {
             "ID": "P003",
@@ -22,7 +32,12 @@
             "Price": 45.0,
             "Stock": 20,
             "Type": "Physical",
-            "Weight": 0.2
+            "Weight": 0.2,
+            "Supplier": {
+                "Supplier_ID": "S001",
+                "Name": "Tech Supplies Inc.",
+                "Contact_Email": "tech67@gmail.com"
+            }
         },
         {
             "ID": "P004",
@@ -30,7 +45,12 @@
             "Price": 299.99,
             "Stock": 10,
             "Type": "Physical",
-            "Weight": 2
+            "Weight": 2,
+            "Supplier": {
+                "Supplier_ID": "S001",
+                "Name": "Tech Supplies Inc.",
+                "Contact_Email": "tech67@gmail.com"
+            }
         },
         {
             "ID": "P005",
@@ -38,7 +58,12 @@
             "Price": 1000.0,
             "Stock": 25,
             "Type": "Physical",
-            "Weight": 0.2
+            "Weight": 0.2,
+            "Supplier": {
+                "Supplier_ID": "S003",
+                "Name": "Apple Store",
+                "Contact_Email": "applestore@apple.com"
+            }
         },
         {
             "ID": "P006",
@@ -46,7 +71,12 @@
             "Price": 100.0,
             "Stock": 20,
             "Type": "Digital",
-            "Download_Size": 500
+            "Download_Size": 500,
+            "Supplier": {
+                "Supplier_ID": "S004",
+                "Name": "Adobe Inc.",
+                "Contact_Email": "adobe@mail.com"
+            }
         },
         {
             "ID": "P007",
@@ -54,7 +84,12 @@
             "Price": 100.0,
             "Stock": 20,
             "Type": "Digital",
-            "Download_Size": 300
+            "Download_Size": 300,
+            "Supplier": {
+                "Supplier_ID": "S002",
+                "Name": "Game World Ltd.",
+                "Contact_Email": "gameworld@hotmail.com "
+            }
         },
         {
             "ID": "P008",
@@ -62,15 +97,12 @@
             "Price": 25.0,
             "Stock": 15,
             "Type": "Digital",
-            "Download_Size": 1500
-        },
-        {
-            "ID": "P009",
-            "Name": "Lenovo Mouse",
-            "Price": 10.0,
-            "Stock": 40,
-            "Type": "Physical",
-            "Weight": 0.1
+            "Download_Size": 1500,
+            "Supplier": {
+                "Supplier_ID": "S005",
+                "Name": "Microsoft Store",
+                "Contact_Email": "microsoftstore@microsoft.com"
+            }
         },
         {
             "ID": "P010",
@@ -78,7 +110,12 @@
             "Price": 25.0,
             "Stock": 20,
             "Type": "Physical",
-            "Weight": 0.1
+            "Weight": 0.1,
+            "Supplier": {
+                "Supplier_ID": "S001",
+                "Name": "Tech Supplies Inc.",
+                "Contact_Email": "tech67@gmail.com"
+            }   
         },
         {
             "ID": "P011",
@@ -86,31 +123,12 @@
             "Price": 70.0,
             "Stock": 20,
             "Type": "Digital",
-            "Download_Size": 2000.0
-        },
-        {
-            "ID": "P012",
-            "Name": "Amazon Prime",
-            "Price": 10.0,
-            "Stock": 20,
-            "Type": "Subscription",
-            "Duration": 3
-        },
-        {
-            "ID": "P013",
-            "Name": "Nintendo Member",
-            "Price": 10.0,
-            "Stock": 20,
-            "Type": "Subscription",
-            "Duration": 2
-        },
-        {
-            "ID": "P014",
-            "Name": "200 Robux",
-            "Price": 5.0,
-            "Stock": 200,
-            "Type": "Digital",
-            "Download_Size": 10.0
+            "Download_Size": 2000.0,
+            "Supplier": {
+                "Supplier_ID": "S002",
+                "Name": "Game World Ltd.",
+                "Contact_Email": "gameworld@hotmail.com"
+            }
         }
     ]
 }

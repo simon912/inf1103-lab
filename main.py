@@ -75,6 +75,7 @@ def menu():
                 print("Product Found:")
                 print("---------------------------------------------------------")
                 product.display_information()
+                product.display_supplier_information()
                 print("---------------------------------------------------------")
             else:
                 print("Product Not Found.")
