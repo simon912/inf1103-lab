@@ -1,0 +1,155 @@
+commit 3224c46a3f6180d41afe9af6e22dbef9f07b316c
+Author: simon912 <kwek915@gmail.com>
+Date:   Mon Nov 2 14:17:44 2026 +0800
+
+    Separate classes into separate files
+
+commit 26203a8b1be06cce051bd217f531c09ede98dc2e
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Oct 29 22:05:31 2026 +0800
+
+    Add .gitignore
+
+commit 1a01b0bfaee9cd8e24fc0edef93fd2f0c3f4e751
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Oct 29 22:04:18 2026 +0800
+
+    Add SubscriptionProduct class
+
+commit a7accc4d9833c8a4eed2fc7a31332e86bc0f3ecc
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Oct 29 21:33:10 2026 +0800
+
+    Add abstract classes
+
+commit f30aa84c93ae7ace03194b3af5a66c9b5c5b6194
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Oct 29 20:19:15 2026 +0800
+
+    Implement DigitalProduct class
+
+commit eeb279748b9e18d5bec784bb942e15aefa45b557
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Oct 29 20:13:34 2026 +0800
+
+    Implement PhysicalProduct class and clean up code
+
+commit 58d89409f2bbcf822c8a9a0cedb1ea9125eb3293
+Author: simon912 <kwek915@gmail.com>
+Date:   Sat Oct 24 19:16:02 2026 +0800
+
+    Finish Lab 8
+
+commit 56d479fbadcde25afb40681335039c77e9221d5a
+Author: simon912 <kwek915@gmail.com>
+Date:   Sat Oct 24 18:57:19 2026 +0800
+
+    Add Inventory class
+
+commit 8744fe2c4bf48c091147c736f19d1a5dd1b89874
+Author: simon912 <kwek915@gmail.com>
+Date:   Sat Oct 24 18:44:10 2026 +0800
+
+    Add Product class
+
+commit d3dbce3f20c0aa8170a7e4959568b9e59998b68a
+Author: simon912 <kwek915@gmail.com>
+Date:   Sun Oct 4 15:19:48 2026 +0800
+
+    Complete Lab 5
+
+commit d2b90b7c3fdd7138393369ff950fd23e488686a8
+Author: simon912 <kwek915@gmail.com>
+Date:   Sun Oct 4 15:13:17 2026 +0800
+
+    Add save inventory and search product function
+
+commit 0d751c5887c269d0bdad4a6df39e79b375c6694b
+Author: simon912 <kwek915@gmail.com>
+Date:   Sun Oct 4 14:55:49 2026 +0800
+
+    Add update stock function
+
+commit 7dbe28210ecf66fd946f2fac897f81b58b577a76
+Author: simon912 <kwek915@gmail.com>
+Date:   Sun Oct 4 14:49:22 2026 +0800
+
+    Add add product function and display all function
+
+commit a7bdca5b03154b5390521ff8898823896c757200
+Author: simon912 <kwek915@gmail.com>
+Date:   Sun Oct 4 14:28:39 2026 +0800
+
+    Add load inventory function
+
+commit 89360b4c4b5c1f550e10bb63488cc724a1d06b74
+Author: simon912 <kwek915@gmail.com>
+Date:   Fri Sep 25 10:34:49 2026 +0800
+
+    Add Week 3 Lab file
+
+commit 8fd06969e71aeb61ec5fe7d37b6b8dcc679941c6
+Author: simon912 <kwek915@gmail.com>
+Date:   Fri Sep 25 10:33:55 2026 +0800
+
+    Implement saving of inventory
+
+commit e1479b3938df1b3021b021f1bac4de118a1559d4
+Author: simon912 <kwek915@gmail.com>
+Date:   Fri Sep 25 10:28:33 2026 +0800
+
+    Implement saving of inventory
+
+commit 5192583c633dee4357c0fb2b42fece61b193536c
+Author: simon912 <kwek915@gmail.com>
+Date:   Fri Sep 25 10:18:29 2026 +0800
+
+    Implement loading of inventory and list tracking of history
+
+commit 212ee4efdde8123657845b5195a021aa0ef9cc2a
+Author: simon912 <kwek915@gmail.com>
+Date:   Fri Sep 11 11:20:30 2026 +0800
+
+    Remove some files
+
+commit 8c4f67e54e53e646863827df4089d8cd868c2619
+Author: simon912 <kwek915@gmail.com>
+Date:   Fri Sep 11 11:17:46 2026 +0800
+
+    Add spacing for some codes
+
+commit 11ca89314219ee0413fc0ba38472fe95dd5e8671
+Author: simon912 <kwek915@gmail.com>
+Date:   Fri Sep 11 11:17:09 2026 +0800
+
+    Add spacing for some codes
+
+commit 6322b5fdb4fda2339ae6d018f3f64bd98e85f351
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Sep 10 20:35:09 2026 +0800
+
+    Implement Dockerfile
+
+commit 80fea57b13f76798a31d14422c03433983675732
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Sep 10 20:11:07 2026 +0800
+
+    Implement alert for inventory exceeding 500 and final result after quitting
+
+commit 24ad7661ecfebdf12f975bfd933624fc8e249ee2
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Sep 10 20:04:49 2026 +0800
+
+    Implemented data validation for string input for stock & negative number + implement inventory tracking
+
+commit 3e945c5c7c1ef0c50f00a89b1603b18624416b38
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Sep 10 19:59:42 2026 +0800
+
+    Implement user input
+
+commit f8fc8698680840f0232928d55095434e1ac2c0c4
+Author: simon912 <kwek915@gmail.com>
+Date:   Thu Sep 10 19:51:15 2026 +0800
+
+    First commit
