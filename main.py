@@ -1,6 +1,8 @@
 from physical_product import PhysicalProduct
 from digital_product import DigitalProduct
 from subscription_product import SubscriptionProduct
+from supplier import Supplier
+from order import Order
 
 from inventory import Inventory, load_inventory, save_inventory
 
@@ -18,7 +20,8 @@ def menu():
     print("3. Update Stock")
     print("4. Search Product")
     print("5. Save Inventory")
-    print("6. Exit")
+    print("6. Create New Order")
+    print("7. Exit")
     print("---------------------------------------------------------\n")
 
     while True:
@@ -41,18 +44,24 @@ def menu():
             product_name = input("Product Name: ")
             price = float(input("Price: "))
             stock = int(input("Stock Quantity: "))
+            
+            supplier_id = input("Supplier ID: ")
+            supplier_name = input("Supplier Name: ")
+            supplier_email = input("Supplier Email: ")
+
+            supplier = Supplier(supplier_id, supplier_name, supplier_email)
 
             if product_type == "1":
                 weight = float(input("Weight (kg): "))
-                product = PhysicalProduct(product_id, product_name, price, stock, weight)
+                product = PhysicalProduct(product_id, product_name, price, stock, weight, supplier)
 
             elif product_type == "2":
                 download_size = float(input("Download Size (MB): "))
-                product = DigitalProduct(product_id, product_name, price, stock, download_size)
+                product = DigitalProduct(product_id, product_name, price, stock, download_size, supplier)
 
             elif product_type == "3":
                 duration_months = int(input("Subscription Duration (months): "))
-                product = SubscriptionProduct(product_id, product_name, price, stock, duration_months)
+                product = SubscriptionProduct(product_id, product_name, price, stock, duration_months, supplier)
 
             else:
                 print("Invalid product type. Product not added.")
@@ -86,14 +95,40 @@ def menu():
             save_inventory(inventory)
 
         elif option == "6":
-            print("Saving inventory before exit...")
-            save_inventory(inventory)
-
             print("")
-            print("Thank you for using Inventory Management.")
-            print("Program terminated.")
-            break
+            print("Create New Order")
+            order_id = input("Enter Order ID: ")
+            order = Order(order_id)
+            while True:
+                product_id = input("Enter Product ID to add to order or enter 0 to exit): ")
+                if product_id == '0':
+                    break
+                product = inventory.search_product(product_id)
+                if product is None:
+                    print("Product not found. Please try again.")
+                    continue
 
+                quantity = int(input(f"Enter quantity for {product.get_name()}: "))
+                if quantity <= 0:
+                    print("Quantity must be greater than 0. Please try again.")
+                    continue
+                order.add_order_line(product, quantity)
+                print(f"Product added to order.")
+            if len(order.get_order_lines()) > 0:
+                print("\nOrder Summary")
+                print("---------------------------------------------------------")
+                order.display_information()
+            else:
+                print("No products were added to this order.")
+            
+        elif option == "7":
+                    print("Saving inventory before exit...")
+                    save_inventory(inventory)
+        
+                    print("")
+                    print("Thank you for using Inventory Management.")
+                    print("Program terminated.")
+                    break
         else:
             print("Invalid option. Please try again.")
 
