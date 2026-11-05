@@ -2,7 +2,7 @@ from product import Product
 from order_line import OrderLine
 
 class Order:
-    def __init__(self, order_id: str):
+    def __init__(self, order_id: str) -> None:
         self.__order_id: str = order_id
         self.__order_lines: list[OrderLine] = []
 
@@ -17,9 +17,9 @@ class Order:
         return total
 
     def remove_order_line(self, product_id: str) -> None:
-        for order_line in self.order_lines:
-            if order_line.product.get_product_id() == product_id:
-                self.order_lines.remove(order_line)
+        for order_line in self.__order_lines:
+            if order_line.get_product().get_product_id() == product_id:
+                self.__order_lines.remove(order_line)
                 print("Order line removed successfully!")
                 return
         print("Order line not found.")

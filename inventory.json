@@ -134,7 +134,7 @@
             "ID": "P012",
             "Name": "Lenovo Laptop",
             "Price": 1500.0,
-            "Stock": 10,
+            "Stock": 15,
             "Supplier": {
                 "Supplier_ID": "S006",
                 "Name": "Lenovo Tech",
@@ -142,6 +142,19 @@
             },
             "Type": "Physical",
             "Weight": 10.0
+        },
+        {
+            "ID": "P013",
+            "Name": "Lenovo Keyboard",
+            "Price": 50.0,
+            "Stock": 10,
+            "Supplier": {
+                "Supplier_ID": "S006",
+                "Name": "Lenovo Tech",
+                "Contact_Email": "lenovo@email.com"
+            },
+            "Type": "Physical",
+            "Weight": 1.0
         }
     ]
 }
