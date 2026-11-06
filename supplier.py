@@ -23,7 +23,7 @@ class Supplier():
             "Contact_Email": self.__contact_email
         }
     @classmethod
-    def from_dict(cls, data: dict) -> Supplier:
+    def from_dict(cls, data: dict) -> 'Supplier':
         return cls(
             data["Supplier_ID"],
             data["Name"],

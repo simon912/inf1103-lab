@@ -17,7 +17,7 @@ class PhysicalProduct(Product, CanBeShipped):
         return data
 
     @classmethod
-    def from_dict(cls, data: dict) -> PhysicalProduct:
+    def from_dict(cls, data: dict) -> 'PhysicalProduct':
         return cls(
             data["ID"],
             data["Name"],

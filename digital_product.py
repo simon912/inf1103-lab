@@ -17,7 +17,7 @@ class DigitalProduct(Product):
         return data
 
     @classmethod
-    def from_dict(cls, data: dict) -> DigitalProduct:
+    def from_dict(cls, data: dict) -> 'DigitalProduct':
         return cls(
             data["ID"],
             data["Name"],

@@ -17,7 +17,7 @@ class SubscriptionProduct(Product):
         return data
 
     @classmethod
-    def from_dict(cls, data: dict) -> SubscriptionProduct:
+    def from_dict(cls, data: dict) -> 'SubscriptionProduct':
         return cls(
             data["ID"],
             data["Name"],
