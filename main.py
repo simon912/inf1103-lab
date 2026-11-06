@@ -37,7 +37,6 @@ def menu():
             print("1. Physical Product")
             print("2. Digital Product")
             print("3. Subscription Product")
-
             product_type = input("Enter product type (1, 2, or 3): ")
 
             product_id = input("Product ID: ")

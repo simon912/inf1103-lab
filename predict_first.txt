@@ -1,0 +1,17 @@
+Supplier and Product Association
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Prediction: Expected each Product object to store a reference to one Supplier object and also expected the Supplier to exist
+independently without being owned by Product
+
+What Happened: Test shows that both PhysicalProduct and DigitalProduct referenced the same Supplier object, thus Supplier can 
+be created independently.
+
+OrderLine and Product Association
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Prediction: Expected each OrderLine object to reference an existing Product without owning or controlling the Product's lifecycle.
+
+What Happened: OrderLine successfully referenced the original Product. Removing OrderLine did not remove the Product from Inventory.
+
+Changes:
+- Added get_product() to OrderLine so that other classes can retrieve without accessing private attributes directly.
+
