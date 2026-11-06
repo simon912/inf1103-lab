@@ -203,7 +203,7 @@ def test_type_hints() -> None:
 
 
 def main() -> None:
-    print("SECTION 9 - TESTING AND REVIEW")
+    print("TESTING AND REVIEW")
     print("========================================")
 
     test_supplier_product_association()
